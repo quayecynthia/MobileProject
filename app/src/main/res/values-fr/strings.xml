@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">SoccerProject</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Réglages</string>
+
+    <string name="menu_home">Accueil</string>
+    <string name="menu_newgame">Nouveau match</string>
+    <string name="menu_previousgame">Anciens matchs</string>
+    <string name="menu_locations">Localisations</string>
+    <string name="menu_statistics">Statistiques</string>
+    <string name="menu_allgames">Tous les matchs</string>
+    <string name="home_second">Home Second</string>
+
+    <string name="home_new">Nouveau match</string>
+    <string name="home_previous">Anciens matchs</string>
+
+    <string name="label_score">Score</string>
+    <string name="label_location">Localisation</string>
+    <string name="label_opponent">Adversaire</string>
+    <string name="label_date">Date</string>
+
+    <string name="button_allgames">Tous les matchs</string>
+    <string name="button_locations">Localisations</string>
+    <string name="button_statistics">Statistiques</string>
+
+    <string name="fragment_allgames">Bienvenue dans tous les matchs</string>
+    <string name="fragment_previousgame">Bienvenue dans les anciens matchs</string>
+    <string name="fragment_newgame">Bienvenue dans Nouveau Match</string>
+    <string name="fragment_home">Accueil</string>
+    <string name="fragment_statistics">Bienvenue Statistiques</string>
+    <string name="fragment_locations">Bienvenue Localisations</string>
+
+
+
+</resources>
