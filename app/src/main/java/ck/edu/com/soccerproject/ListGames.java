@@ -1,21 +1,22 @@
 package ck.edu.com.soccerproject;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.List;
 
 public class ListGames extends RecyclerView.Adapter<ListGames.MyViewHolder> {
 
-    Context context;
-    ArrayList<Game> gamesList;
+    private Context context;
+    private ArrayList<Game> gamesList;
 
     public ListGames(Context context, ArrayList<Game> gamesList) {
         this.context = context;
@@ -32,9 +33,14 @@ public class ListGames extends RecyclerView.Adapter<ListGames.MyViewHolder> {
     @Override
     public void onBindViewHolder(ListGames.MyViewHolder holder, int position) {
         holder.display_date.setText(gamesList.get(position).getDate());
-        holder.display_opponent.setText(gamesList.get(position).getOpponent());
+        holder.display_firstTeam.setText(gamesList.get(position).getFirst_team());
+        holder.display_secondTeam.setText(gamesList.get(position).getSecond_team());
         holder.display_score.setText(gamesList.get(position).getScore());
         holder.display_location.setText(gamesList.get(position).getLocation());
+
+        byte[] image = gamesList.get(position).getImage();
+        Bitmap bitmap = BitmapFactory.decodeByteArray(image, 0, image.length);
+        holder.display_image.setImageBitmap(bitmap);
     }
 
     @Override
@@ -45,17 +51,21 @@ public class ListGames extends RecyclerView.Adapter<ListGames.MyViewHolder> {
     public static class MyViewHolder extends  RecyclerView.ViewHolder{
 
         private TextView display_score;
-        private TextView display_opponent;
+        private TextView display_firstTeam;
+        private TextView display_secondTeam;
         private TextView display_date;
         private TextView display_location;
+        private ImageView display_image;
 
         public MyViewHolder (View itemView){
             super(itemView);
 
             display_date =  itemView.findViewById(R.id.display_date);
-            display_opponent =  itemView.findViewById(R.id.display_opponent);
+            display_firstTeam =  itemView.findViewById(R.id.display_firstTeam);
+            display_secondTeam =  itemView.findViewById(R.id.display_secondTeam);
             display_score =  itemView.findViewById(R.id.display_score);
             display_location =  itemView.findViewById(R.id.display_location);
+            display_image = itemView.findViewById(R.id.display_image);
         }
     }
 }

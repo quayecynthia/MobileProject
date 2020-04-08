@@ -2,27 +2,41 @@ package ck.edu.com.soccerproject;
 
 //model for one game
 public class Game {
-    public Game() {
-    }
 
-    public Game(String opponent, String score, String date, String location) {
-        this.opponent = opponent;
-        this.score = score;
-        this.date = date;
-        this.location = location;
-    }
-
-    private String opponent;
+    private String first_team;
+    private String second_team;
     private String score;
     private String date;
     private String location;
-
-    public String getOpponent() {
-        return opponent;
+    private byte[] image;
+    public Game() {
     }
 
-    public void setOpponent(String opponent) {
-        this.opponent = opponent;
+    public Game(String first_team, String second_team, String score, String date, String location, byte[] image) {
+        this.first_team = first_team;
+        this.second_team = second_team;
+        this.score = score;
+        this.date = date;
+        this.location = location;
+        this.image = image;
+    }
+
+
+
+    public String getFirst_team() {
+        return first_team;
+    }
+
+    public void setFirst_team(String first_team) {
+        this.first_team = first_team;
+    }
+
+    public String getSecond_team() {
+        return second_team;
+    }
+
+    public void setSecond_team(String second_team) {
+        this.second_team = second_team;
     }
 
     public String getScore() {
@@ -48,5 +62,9 @@ public class Game {
     public void setLocation(String location) {
         this.location = location;
     }
+
+    public byte[] getImage() { return image;}
+
+    public void setImage(byte[] image) {this.image = image;}
 
 }

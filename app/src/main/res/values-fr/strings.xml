@@ -18,10 +18,11 @@
     <string name="home_new">Nouveau match</string>
     <string name="home_previous">Anciens matchs</string>
 
-    <string name="label_score">Score</string>
-    <string name="label_location">Localisation</string>
-    <string name="label_opponent">Adversaire</string>
-    <string name="label_date">Date</string>
+    <string name="label_score">Score: </string>
+    <string name="label_location">Localisation: </string>
+    <string name="label_firstTeam">Première équipe: </string>
+    <string name="label_secondTeam">Seconde équipe: </string>
+    <string name="label_date">Date: </string>
 
     <string name="button_allgames">Tous les matchs</string>
     <string name="button_locations">Localisations</string>
@@ -34,6 +35,7 @@
     <string name="fragment_statistics">Bienvenue Statistiques</string>
     <string name="fragment_locations">Bienvenue Localisations</string>
 
-
+    <string name="gallery_radio">Accéder à la gallerie</string>
+    <string name="camera_radio">Acceder à la caméra</string>
 
 </resources>

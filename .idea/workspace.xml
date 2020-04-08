@@ -9,7 +9,32 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="46507809-542c-4e37-966a-33c1760d48f5" name="Default Changelist" comment="" />
+    <list default="true" id="46507809-542c-4e37-966a-33c1760d48f5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/debug/res/values/google_maps_api.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/ck/edu/com/soccerproject/MapsActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/ck/edu/com/soccerproject/PlaceApi.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/ck/edu/com/soccerproject/PlaceAutoSuggestAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_maps.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ck/edu/com/soccerproject/DatabaseHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ck/edu/com/soccerproject/DatabaseHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ck/edu/com/soccerproject/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ck/edu/com/soccerproject/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ck/edu/com/soccerproject/ListGames.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ck/edu/com/soccerproject/ListGames.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ck/edu/com/soccerproject/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ck/edu/com/soccerproject/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ck/edu/com/soccerproject/ui/allgames/AllgamesFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ck/edu/com/soccerproject/ui/allgames/AllgamesFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ck/edu/com/soccerproject/ui/locations/LocationsFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ck/edu/com/soccerproject/ui/locations/LocationsFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ck/edu/com/soccerproject/ui/newgame/NewgameFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ck/edu/com/soccerproject/ui/newgame/NewgameFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_locations.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_locations.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_newgame.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_newgame.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/row_game.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/row_game.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values-fr/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values-fr/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,19 +58,31 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="layoutResourceFile" />
-        <option value="Class" />
         <option value="valueResourceFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1ZXPu2uXWEP0eKw1Y9zg5qj6dDv" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
     <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="Galaxy_Nexus_API_22" />
     <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-03-23T21:34:20.496Z" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SelectDeploymentTargetsDialog.selectedDevices" value="Galaxy_Nexus_API_22" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Documents/COURS ING4/Semester 2/Mobile programming/question2/question2" />
+    <property name="last_opened_file_path" value="$USER_HOME$/AndroidStudioProjects/SoccerProject" />
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
+  </component>
+  <component name="RecentsManager">
+    <key name="android.template.packageName">
+      <recent name="ck.edu.com.soccerproject" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -131,5 +168,18 @@
       <updated>1584982684680</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

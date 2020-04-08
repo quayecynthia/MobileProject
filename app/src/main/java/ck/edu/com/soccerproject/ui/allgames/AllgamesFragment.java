@@ -50,12 +50,15 @@ public class AllgamesFragment extends Fragment {
         cursor = myDatabase.getData();
         if(cursor.moveToFirst()){
             do{
-                String opponent, score, date, location;
-                opponent = cursor.getString(1);
-                score = cursor.getString(2);
-                date = cursor.getString(3);
-                location = cursor.getString(4);
-                Game game = new Game(opponent, score, date, location);
+                String first_team, second_team, score, date, location;
+                byte[] image;
+                first_team = cursor.getString(1);
+                second_team = cursor.getString(2);
+                score = cursor.getString(3);
+                date = cursor.getString(4);
+                location = cursor.getString(5);
+                image = cursor.getBlob(6);
+                Game game = new Game(first_team, second_team, score, date, location, image);
                 gamesTable.add(game);
 
             }while(cursor.moveToNext());

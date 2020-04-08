@@ -1,6 +1,7 @@
 package ck.edu.com.soccerproject;
 
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
@@ -19,15 +20,9 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import ck.edu.com.soccerproject.ui.newgame.NewgameFragment;
-
-
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
-    DatabaseHelper myDatabase;
-    ImageButton button_addData;
-    EditText editOpponent, editScore, editDate, editLocation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(navigationView, navController);
 
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

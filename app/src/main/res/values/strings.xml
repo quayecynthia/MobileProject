@@ -18,10 +18,11 @@
     <string name="home_new">New Game</string>
     <string name="home_previous">Previous Game</string>
 
-    <string name="label_score">Score</string>
-    <string name="label_location">Locations</string>
-    <string name="label_opponent">Opponent</string>
-    <string name="label_date">Date</string>
+    <string name="label_score">Score: </string>
+    <string name="label_location">Locations: </string>
+    <string name="label_firstTeam">First team: </string>
+    <string name="label_secondTeam">Second team: </string>
+    <string name="label_date">Date: </string>
 
     <string name="button_allgames">All Games</string>
     <string name="button_locations">Locations</string>
@@ -34,7 +35,9 @@
     <string name="fragment_statistics">Welcome in Statistics</string>
     <string name="fragment_locations">Welcome in Locations</string>
 
-
+    <string name="gallery_radio">Pick from gallery</string>
+    <string name="camera_radio">Pick from camera</string>
+    <string name="title_activity_maps">Map</string>
 
 
 </resources>
