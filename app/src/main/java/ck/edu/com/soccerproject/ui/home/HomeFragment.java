@@ -1,21 +1,17 @@
 package ck.edu.com.soccerproject.ui.home;
 
+import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
 
 import java.util.Locale;
 
@@ -57,33 +53,28 @@ public class HomeFragment extends Fragment {
         frenchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "Switch to French", Toast.LENGTH_LONG).show();
-                Locale locale = new Locale("fr");
-                Locale.setDefault(locale);
-                Configuration config = new Configuration();
-                config.locale = locale;
-
-                /*getActivity().getResources().updateConfiguration(config, getActivity().getResources().getDisplayMetrics());
-                Fragment frg = getFragmentManager().findFragmentByTag(getTag());
-                //Fragment frg = getActivity().getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment);
-                final FragmentTransaction ft = getFragmentManager().beginTransaction();
-                ft.detach(frg);
-                ft.attach(frg);
-                ft.commit();*/
+                Toast.makeText(getActivity(), "En français", Toast.LENGTH_LONG).show();
+                setLocale("fr");
+                getActivity().recreate();
             }
-
-        });
+        })  ;
 
         englishButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                /*Locale locale = new Locale("en");
-                Locale.setDefault(locale);
-                Configuration config = new Configuration();
-                config.locale = locale;*/
-
+                Toast.makeText(getActivity(), "Switch to English", Toast.LENGTH_LONG).show();
+                setLocale("en");
+                getActivity().recreate();
             }
         });
         return v;
+    }
+
+    public void setLocale(String lang){
+        Locale locale = new Locale(lang);
+        Locale.setDefault(locale);
+        Configuration config = new Configuration();
+        config.locale = locale;
+        getActivity().getResources().updateConfiguration(config, getActivity().getResources().getDisplayMetrics());
     }
 }

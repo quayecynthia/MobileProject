@@ -37,5 +37,6 @@
 
     <string name="gallery_radio">Accéder à la gallerie</string>
     <string name="camera_radio">Acceder à la caméra</string>
+    <string name="title_activity_maps">Carte</string>
 
 </resources>
