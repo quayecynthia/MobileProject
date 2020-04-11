@@ -28,6 +28,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -49,12 +50,15 @@ public class LocationsFragment extends Fragment implements OnMapReadyCallback {
     private ArrayList<Game> gamesTable;
     private ArrayList<LatLng> latLngArrayList;
 
+    private Geocoder geocoder;
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_locations, container, false);
         mapFragment = (SupportMapFragment)getChildFragmentManager().findFragmentById(R.id.map);
         gamesTable = new ArrayList<Game>();
         latLngArrayList = new ArrayList<LatLng>();
+        geocoder = new Geocoder(getActivity());
         ListGames listGames = new ListGames (getContext(), gamesTable);
         info_match = root.findViewById(R.id.info_match);
 
@@ -95,35 +99,37 @@ public class LocationsFragment extends Fragment implements OnMapReadyCallback {
     @Override
     public void onMapReady(GoogleMap googleMap) {
         map = googleMap;
+        List <Address> addresses;
+        String address = null;
         for(int i = 0; i<latLngArrayList.size(); i++){
-            for(int j = 0; j < gamesTable.size(); j++){
-                map.addMarker(new MarkerOptions().position(latLngArrayList.get(i)).title(gamesTable.get(j).getLocation()));
-                System.out.println(gamesTable.get(j).getLocation());
+                try {
+                     addresses = geocoder.getFromLocation(latLngArrayList.get(i).latitude, latLngArrayList.get(i).longitude, 1);
+                     address = addresses.get(0).getLocality();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                map.addMarker(new MarkerOptions().position(latLngArrayList.get(i)).title(address));
                 map.animateCamera(CameraUpdateFactory.zoomTo(15.0f));
                 map.moveCamera(CameraUpdateFactory.newLatLng(latLngArrayList.get(i)));
-            }
-
         }
 
         map.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
             @Override
             public boolean onMarkerClick(Marker marker) {
-                String location = marker.getTitle();
-                for(int i = 0; i<gamesTable.size() ; i++){
-                    System.out.println("Location "+location);
-                    System.out.println("Game "+gamesTable.get(i).getLocation());
-                    if(gamesTable.get(i).getLocation() != location){
-                        System.out.println("ptn de merde");
-                        info_match.setText(info_match.getText()+location);
+                info_match.setText("");
+                for(int i = 0; i<gamesTable.size(); i++){
+                    LatLng location = getLatLng(gamesTable.get(i).getLocation());
+                    if(location.latitude == marker.getPosition().latitude && location.longitude == marker.getPosition().longitude ){
+                        info_match.setText(info_match.getText() + gamesTable.get(i).getFirst_team() + " VS " +gamesTable.get(i).getSecond_team() +" : "+gamesTable.get(i).getScore() +"\n");
                     }
                 }
-                return false;
+            return false;
             }
         });
     }
 
     private LatLng getLatLng (String address){
-        Geocoder geocoder = new Geocoder(getActivity());
+
         List<Address> addressList;
         try{
             addressList = geocoder.getFromLocationName(address, 1);

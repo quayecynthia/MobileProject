@@ -78,8 +78,6 @@ public class NewgameFragment extends Fragment{
                              ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_newgame, container, false);
 
-        //String apikey = "AIzaSyDTqxehyHE6L_c1UdUfZx_r2R1ryia1wfw";
-
         myDatabase = new DatabaseHelper(getActivity());
 
         editFirstTeam = root.findViewById(R.id.edit_firstTeam);
@@ -94,30 +92,6 @@ public class NewgameFragment extends Fragment{
         button_addPhotos = root.findViewById(R.id.button_addPhotos);
 
         newDate();
-
-       /* if(!Places.isInitialized()){
-                Places.initialize(getActivity().getApplicationContext(), apikey);
-        }
-
-        placesClient = Places.createClient(getActivity());
-
-        final AutocompleteSupportFragment autocompleteSupportFragment =
-                (AutocompleteSupportFragment)getFragmentManager().findFragmentById(R.id.autocomplete_fragment);
-
-        autocompleteSupportFragment.setPlaceFields(Arrays.asList(Place.Field.ID, Place.Field.LAT_LNG, Place.Field.NAME));
-
-        autocompleteSupportFragment.setOnPlaceSelectedListener(new PlaceSelectionListener() {
-            @Override
-            public void onPlaceSelected(@NonNull Place place) {
-                final LatLng latLng =place.getLatLng();
-                Log.i("PlaceApi", "onPlaceSelected: "+latLng.latitude+"\n"+latLng.longitude);
-            }
-
-            @Override
-            public void onError(@NonNull Status status) {
-
-            }
-        });*/
 
         button_addData.setOnClickListener(new View.OnClickListener() {
             @Override
