@@ -1,4 +1,4 @@
-#Sat Apr 11 15:01:58 CEST 2020
-base.0=C\:\\Users\\cynth\\Documents\\GitHub\\MobileProject\\app\\build\\intermediates\\dex\\debug\\out\\classes.dex
+#Mon Apr 13 00:05:27 CEST 2020
+base.0=/Users/oceanesalmeron/AndroidStudioProjects/SoccerProject/app/build/intermediates/dex/debug/out/classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

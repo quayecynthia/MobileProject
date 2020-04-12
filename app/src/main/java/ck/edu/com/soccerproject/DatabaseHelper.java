@@ -62,4 +62,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return result;
     }
 
+    public void exportData(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor result = db.rawQuery("select * from "+ TABLE_NAME, null);
+
+        if (result.getCount()>5){
+            new ExternalDatabase().execute(result);
+        }
+    }
+
 }

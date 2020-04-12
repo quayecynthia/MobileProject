@@ -95,51 +95,42 @@ public class NewgameFragment extends Fragment{
 
         newDate();
 
-       /* if(!Places.isInitialized()){
-                Places.initialize(getActivity().getApplicationContext(), apikey);
-        }
-
-        placesClient = Places.createClient(getActivity());
-
-        final AutocompleteSupportFragment autocompleteSupportFragment =
-                (AutocompleteSupportFragment)getFragmentManager().findFragmentById(R.id.autocomplete_fragment);
-
-        autocompleteSupportFragment.setPlaceFields(Arrays.asList(Place.Field.ID, Place.Field.LAT_LNG, Place.Field.NAME));
-
-        autocompleteSupportFragment.setOnPlaceSelectedListener(new PlaceSelectionListener() {
-            @Override
-            public void onPlaceSelected(@NonNull Place place) {
-                final LatLng latLng =place.getLatLng();
-                Log.i("PlaceApi", "onPlaceSelected: "+latLng.latitude+"\n"+latLng.longitude);
-            }
-
-            @Override
-            public void onError(@NonNull Status status) {
-
-            }
-        });*/
-
         button_addData.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                boolean isInserted = myDatabase.insertData(editFirstTeam.getText().toString(),
-                        editSecondTeam.getText().toString(),
-                        editScore.getText().toString(),
-                        editDate.getText().toString(),
-                        editLocation.getText().toString(),
-                        imageViewToByte(editPhoto));
-                if( isInserted == true){
-                    editFirstTeam.setText("");
-                    editSecondTeam.setText("");
-                    editScore.setText("");
-                    editDate.setText("");
-                    editLocation.setText("");
-                    editPhoto.setImageResource(R.mipmap.ic_launcher);
-                    Toast.makeText(getActivity(), "Data inserted", Toast.LENGTH_LONG).show();
+                boolean isEmpty=false;
+
+                if (editFirstTeam.getText().toString().matches("") || editSecondTeam.getText().toString().matches("") ||
+                        editScore.getText().toString().matches("") || editDate.getText().toString().matches("") ||
+                        editLocation.getText().toString().matches("") || editPhoto.getDrawable()==null) {
+                    isEmpty=true;
                 }
-                else{
-                    Toast.makeText(getActivity(), "Data not inserted", Toast.LENGTH_LONG).show();
+
+                if(!isEmpty){
+                    boolean isInserted = myDatabase.insertData(editFirstTeam.getText().toString(),
+                            editSecondTeam.getText().toString(),
+                            editScore.getText().toString(),
+                            editDate.getText().toString(),
+                            editLocation.getText().toString(),
+                            imageViewToByte(editPhoto));
+                    myDatabase.exportData();
+                    if( isInserted == true){
+                        editFirstTeam.setText("");
+                        editSecondTeam.setText("");
+                        editScore.setText("");
+                        editDate.setText("");
+                        editLocation.setText("");
+                        editPhoto.setImageResource(R.mipmap.ic_launcher);
+                        Toast.makeText(getActivity(), "Data inserted", Toast.LENGTH_LONG).show();
+                    }
+                    else{
+                        Toast.makeText(getActivity(), "Data not inserted", Toast.LENGTH_LONG).show();
+                    }
+                }else{
+                    Toast.makeText(getActivity(), "Fill the fields", Toast.LENGTH_LONG).show();
                 }
+
+
             }
         });
 

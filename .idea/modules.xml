@@ -4,6 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/SoccerProject.iml" filepath="$PROJECT_DIR$/SoccerProject.iml" group="SoccerProject" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="SoccerProject/app" />
+      <module fileurl="file://$PROJECT_DIR$/mysql-connector-java-5.1.48/mysql-connector-java-5.1.48.iml" filepath="$PROJECT_DIR$/mysql-connector-java-5.1.48/mysql-connector-java-5.1.48.iml" group="SoccerProject/mysql-connector-java-5.1.48" />
+      <module fileurl="file://$PROJECT_DIR$/mysql-connector-java-5.1.48-bin/mysql-connector-java-5.1.48-bin.iml" filepath="$PROJECT_DIR$/mysql-connector-java-5.1.48-bin/mysql-connector-java-5.1.48-bin.iml" group="SoccerProject/mysql-connector-java-5.1.48-bin" />
     </modules>
   </component>
 </project>
