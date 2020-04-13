@@ -6,24 +6,20 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import ck.edu.com.soccerproject.DatabaseHelper;
 import ck.edu.com.soccerproject.Game;
 import ck.edu.com.soccerproject.ListGames;
 import ck.edu.com.soccerproject.R;
 
+//Fragment display all matches with the RecyclerView
 public class AllgamesFragment extends Fragment {
     SQLiteDatabase sqLiteDatabase;
     DatabaseHelper myDatabase;
@@ -40,12 +36,14 @@ public class AllgamesFragment extends Fragment {
         recyclerView = root.findViewById(R.id.recycler_allgames);
         gamesTable = new ArrayList<Game>();
         ListGames listGames = new ListGames (getContext(), gamesTable);
+        //Set the recycler view
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setAdapter(listGames);
 
         //instantiate the database
         myDatabase = new DatabaseHelper(getActivity());
         sqLiteDatabase = myDatabase.getReadableDatabase();
+
         //retrieve all data from cursor
         cursor = myDatabase.getData();
         if(cursor.moveToFirst()){
@@ -58,6 +56,7 @@ public class AllgamesFragment extends Fragment {
                 date = cursor.getString(4);
                 location = cursor.getString(5);
                 image = cursor.getBlob(6);
+                //Add a new game in the list of games
                 Game game = new Game(first_team, second_team, score, date, location, image);
                 gamesTable.add(game);
 

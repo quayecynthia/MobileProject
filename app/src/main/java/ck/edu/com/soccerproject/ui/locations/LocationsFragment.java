@@ -8,18 +8,12 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
-
-import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -37,6 +31,7 @@ import ck.edu.com.soccerproject.Game;
 import ck.edu.com.soccerproject.ListGames;
 import ck.edu.com.soccerproject.R;
 
+//Fragment for matches locations
 public class LocationsFragment extends Fragment implements OnMapReadyCallback {
 
     private SupportMapFragment mapFragment;
@@ -62,6 +57,7 @@ public class LocationsFragment extends Fragment implements OnMapReadyCallback {
         ListGames listGames = new ListGames (getContext(), gamesTable);
         info_match = root.findViewById(R.id.info_match);
 
+        //Load the google map
         if(mapFragment == null){
             FragmentManager fm = getFragmentManager();
             FragmentTransaction ft = fm.beginTransaction();
@@ -73,6 +69,7 @@ public class LocationsFragment extends Fragment implements OnMapReadyCallback {
         //instantiate the database
         myDatabase = new DatabaseHelper(getActivity());
         sqLiteDatabase = myDatabase.getReadableDatabase();
+
         //retrieve all data from cursor
         cursor = myDatabase.getData();
         if(cursor.moveToFirst()){
@@ -101,24 +98,29 @@ public class LocationsFragment extends Fragment implements OnMapReadyCallback {
         map = googleMap;
         List <Address> addresses;
         String address = null;
+        //browse list of latitute/longitude of all matches
         for(int i = 0; i<latLngArrayList.size(); i++){
                 try {
+                    //get the real address from these matches
                      addresses = geocoder.getFromLocation(latLngArrayList.get(i).latitude, latLngArrayList.get(i).longitude, 1);
                      address = addresses.get(0).getLocality();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
+                //Add marker on these matches and set the camera
                 map.addMarker(new MarkerOptions().position(latLngArrayList.get(i)).title(address));
                 map.animateCamera(CameraUpdateFactory.zoomTo(15.0f));
                 map.moveCamera(CameraUpdateFactory.newLatLng(latLngArrayList.get(i)));
         }
 
+        //Display information of marker on click
         map.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
             @Override
             public boolean onMarkerClick(Marker marker) {
                 info_match.setText("");
                 for(int i = 0; i<gamesTable.size(); i++){
                     LatLng location = getLatLng(gamesTable.get(i).getLocation());
+                    //Set the EditText to have information of the current match
                     if(location.latitude == marker.getPosition().latitude && location.longitude == marker.getPosition().longitude ){
                         info_match.setText(info_match.getText() + gamesTable.get(i).getFirst_team() + " VS " +gamesTable.get(i).getSecond_team() +" : "+gamesTable.get(i).getScore() +"\n");
                     }
@@ -128,6 +130,7 @@ public class LocationsFragment extends Fragment implements OnMapReadyCallback {
         });
     }
 
+    //Convert address to latitude and longitude
     private LatLng getLatLng (String address){
 
         List<Address> addressList;

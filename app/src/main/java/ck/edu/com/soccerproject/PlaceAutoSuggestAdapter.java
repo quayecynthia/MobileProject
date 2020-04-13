@@ -7,10 +7,10 @@ import android.widget.Filterable;
 
 import java.util.ArrayList;
 
+//Place autoComplete class
 public class PlaceAutoSuggestAdapter extends ArrayAdapter implements Filterable {
 
     ArrayList<String> results;
-
     int resource;
     Context context;
 
@@ -20,7 +20,6 @@ public class PlaceAutoSuggestAdapter extends ArrayAdapter implements Filterable 
         super(context,resId);
         this.context=context;
         this.resource=resId;
-
     }
 
     @Override
@@ -33,6 +32,7 @@ public class PlaceAutoSuggestAdapter extends ArrayAdapter implements Filterable 
         return results.get(pos);
     }
 
+    //Filter places
     @Override
     public Filter getFilter(){
         Filter filter=new Filter() {

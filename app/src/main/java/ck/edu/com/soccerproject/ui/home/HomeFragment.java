@@ -1,6 +1,5 @@
 package ck.edu.com.soccerproject.ui.home;
 
-import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -19,6 +18,7 @@ import ck.edu.com.soccerproject.R;
 import ck.edu.com.soccerproject.ui.newgame.NewgameFragment;
 import ck.edu.com.soccerproject.ui.previousgame.PreviousgameFragment;
 
+//Welcome fragment
 public class HomeFragment extends Fragment {
     private Button newButton, previousButton;
     private Button frenchButton, englishButton;
@@ -32,6 +32,7 @@ public class HomeFragment extends Fragment {
         frenchButton = v.findViewById(R.id.button_french);
         englishButton = v.findViewById(R.id.button_english);
 
+        //Access to new match
         newButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -41,6 +42,7 @@ public class HomeFragment extends Fragment {
             }
         });
 
+        //Access to previous matches
         previousButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -50,6 +52,7 @@ public class HomeFragment extends Fragment {
             }
         });
 
+        //Switch to French
         frenchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -57,8 +60,9 @@ public class HomeFragment extends Fragment {
                 setLocale("fr");
                 getActivity().recreate();
             }
-        })  ;
+        });
 
+        //Switch to English
         englishButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -70,6 +74,7 @@ public class HomeFragment extends Fragment {
         return v;
     }
 
+    //Refresh fragments to change the current language
     public void setLocale(String lang){
         Locale locale = new Locale(lang);
         Locale.setDefault(locale);

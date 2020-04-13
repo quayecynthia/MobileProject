@@ -11,7 +11,17 @@
   <component name="ChangeListManager">
     <list default="true" id="46507809-542c-4e37-966a-33c1760d48f5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ck/edu/com/soccerproject/DatabaseHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ck/edu/com/soccerproject/DatabaseHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ck/edu/com/soccerproject/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ck/edu/com/soccerproject/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ck/edu/com/soccerproject/ListGames.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ck/edu/com/soccerproject/ListGames.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ck/edu/com/soccerproject/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ck/edu/com/soccerproject/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ck/edu/com/soccerproject/PlaceApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ck/edu/com/soccerproject/PlaceApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ck/edu/com/soccerproject/PlaceAutoSuggestAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ck/edu/com/soccerproject/PlaceAutoSuggestAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ck/edu/com/soccerproject/ui/allgames/AllgamesFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ck/edu/com/soccerproject/ui/allgames/AllgamesFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ck/edu/com/soccerproject/ui/home/HomeFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ck/edu/com/soccerproject/ui/home/HomeFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ck/edu/com/soccerproject/ui/locations/LocationsFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ck/edu/com/soccerproject/ui/locations/LocationsFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ck/edu/com/soccerproject/ui/newgame/NewgameFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ck/edu/com/soccerproject/ui/newgame/NewgameFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ck/edu/com/soccerproject/ui/previousgame/PreviousgameFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ck/edu/com/soccerproject/ui/previousgame/PreviousgameFragment.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

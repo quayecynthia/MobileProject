@@ -1,14 +1,7 @@
 package ck.edu.com.soccerproject;
 
-import android.app.Activity;
-import android.content.Context;
 import android.os.Bundle;
-import android.view.View;
 import android.view.Menu;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageButton;
-import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 

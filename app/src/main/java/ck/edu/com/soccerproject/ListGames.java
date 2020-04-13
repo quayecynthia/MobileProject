@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
+//List of all games in a recyclerView
 public class ListGames extends RecyclerView.Adapter<ListGames.MyViewHolder> {
 
     private Context context;
@@ -30,6 +31,7 @@ public class ListGames extends RecyclerView.Adapter<ListGames.MyViewHolder> {
         return  vHolder;
     }
 
+    //Display all games in the recycler View
     @Override
     public void onBindViewHolder(ListGames.MyViewHolder holder, int position) {
         holder.display_date.setText(gamesList.get(position).getDate());
@@ -48,6 +50,7 @@ public class ListGames extends RecyclerView.Adapter<ListGames.MyViewHolder> {
         return gamesList.size();
     }
 
+    //RecyclerView class
     public static class MyViewHolder extends  RecyclerView.ViewHolder{
 
         private TextView display_score;

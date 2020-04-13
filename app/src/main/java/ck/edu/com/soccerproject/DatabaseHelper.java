@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+//Internal database class
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     public static final String DATABASE_NAME = "Matches.db";
@@ -33,6 +34,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
+    //Insert a new row
     public boolean insertData(String first_team, String second_team, String score, String date, String location, byte[] image) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -55,6 +57,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
+    //Retrieve all data
     public Cursor getData(){
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor result = db.rawQuery("select * from "+ TABLE_NAME, null);

@@ -18,6 +18,7 @@ import java.net.URL;
 import java.util.ArrayList;
 public class PlaceApi {
 
+    //Return arrayList according to the string gave in input
     public ArrayList<String> autoComplete(String input){
         ArrayList<String> arrayList=new ArrayList();
         HttpURLConnection connection=null;

@@ -8,18 +8,15 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
 
 import ck.edu.com.soccerproject.R;
 import ck.edu.com.soccerproject.ui.allgames.AllgamesFragment;
 import ck.edu.com.soccerproject.ui.locations.LocationsFragment;
-import ck.edu.com.soccerproject.ui.newgame.NewgameFragment;
 import ck.edu.com.soccerproject.ui.statistics.StatisticsFragment;
 
+//Fragment that gives access to locations, all games and statistics
 public class PreviousgameFragment extends Fragment {
     private Button locationsButton, allgamesButton, statisticsButton;
 

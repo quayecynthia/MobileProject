@@ -1,6 +1,6 @@
 package ck.edu.com.soccerproject;
 
-//model for one game
+//Game class
 public class Game {
 
     private String first_team;
@@ -22,7 +22,7 @@ public class Game {
     }
 
 
-
+    //Accessors
     public String getFirst_team() {
         return first_team;
     }

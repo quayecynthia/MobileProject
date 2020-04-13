@@ -2,9 +2,7 @@ package ck.edu.com.soccerproject.ui.newgame;
 import android.Manifest;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
-import android.app.Dialog;
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -27,10 +25,6 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
-import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -53,6 +47,7 @@ import ck.edu.com.soccerproject.R;
 
 import static androidx.constraintlayout.widget.Constraints.TAG;
 
+//Add a new game in the database
 public class NewgameFragment extends Fragment{
     private DatabaseHelper myDatabase;
     private ImageButton button_addData;
@@ -85,6 +80,7 @@ public class NewgameFragment extends Fragment{
         editScore = root.findViewById(R.id.edit_score);
         editDate = root.findViewById(R.id.edit_date);
         editLocation = root.findViewById(R.id.edit_location);
+        //set AutoComplete
         editLocation.setAdapter(new PlaceAutoSuggestAdapter(getActivity(), android.R.layout.simple_list_item_1));
 
         editPhoto = root.findViewById(R.id.new_photo);
@@ -96,6 +92,7 @@ public class NewgameFragment extends Fragment{
         button_addData.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //Retrieve all information and insert them in the database
                 boolean isInserted = myDatabase.insertData(editFirstTeam.getText().toString(),
                         editSecondTeam.getText().toString(),
                         editScore.getText().toString(),
@@ -120,6 +117,7 @@ public class NewgameFragment extends Fragment{
         button_addPhotos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //Check permission to access to camera
                 if(ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED){
                     editPhoto.setEnabled(false);
                     ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE},SELECT_PHOTO);
@@ -127,16 +125,19 @@ public class NewgameFragment extends Fragment{
                 else{
                     editPhoto.setEnabled(true);
                 }
+                //Create AlertDialog to choose from gallery or camera
                 final CharSequence[] items = {"Gallery", "Camera"};
                 AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
                 builder.setItems(items, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int item) {
+                        //Open your gallery
                         if(item == 0){
                             Intent photoPickerIntent = new Intent (Intent.ACTION_PICK);
                             photoPickerIntent.setType("image/*");
                             startActivityForResult(photoPickerIntent, SELECT_PHOTO);
                         }
+                        //Open the camera
                         else if(item == 1){
                             Intent intent = new Intent (MediaStore.ACTION_IMAGE_CAPTURE);
                             startActivityForResult(intent, CAPTURE_PHOTO);
@@ -150,6 +151,7 @@ public class NewgameFragment extends Fragment{
         return root;
     }
 
+    //Convert the image to Byte to save it in the database
     public byte[] imageViewToByte(ImageView image){
         Bitmap bitmap = ((BitmapDrawable)image.getDrawable()).getBitmap();
         ByteArrayOutputStream stream = new ByteArrayOutputStream();
@@ -159,6 +161,7 @@ public class NewgameFragment extends Fragment{
         return byteArray;
     }
 
+    //Access permissions
     @Override
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults){
         if(requestCode == 0){
@@ -169,7 +172,9 @@ public class NewgameFragment extends Fragment{
         }
     }
 
+    //ProgressBar to open the photo
     public void setProgressBar(){
+        //Set the progress bar
         progressBar = new ProgressDialog(getActivity());
         progressBar.setCancelable(true);
         progressBar.setMessage("Loading ...");
@@ -178,6 +183,7 @@ public class NewgameFragment extends Fragment{
         progressBar.show();
         progressBarStatus = 0;
 
+        //Create a new thread
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -189,7 +195,7 @@ public class NewgameFragment extends Fragment{
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
-
+                    //Post the message to the queue
                     progressBarHandler.post(new Runnable() {
                         @Override
                         public void run() {
@@ -210,6 +216,7 @@ public class NewgameFragment extends Fragment{
         }).start();
     }
 
+    //add the photo to the imageView
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data){
         super.onActivityResult(requestCode, resultCode, data);
@@ -217,34 +224,32 @@ public class NewgameFragment extends Fragment{
             final Uri imageUri = data.getData();
             try {
                 final InputStream imageStream = getActivity().getContentResolver().openInputStream(imageUri);
-                final Bitmap selectedImage = BitmapFactory.decodeStream(imageStream);
+                final Bitmap bitmap = BitmapFactory.decodeStream(imageStream);
                 setProgressBar();
-                editPhoto.setImageBitmap(selectedImage);
+                editPhoto.setImageBitmap(bitmap);
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             }
         }
         else if(requestCode == CAPTURE_PHOTO && resultCode == getActivity().RESULT_OK){
-            onCaptureImageResult(data);
-
+            bitmap = (Bitmap) data.getExtras().get("data");
+            //setProgressBar();
+            editPhoto.setMaxWidth(100);
+            editPhoto.setImageBitmap(bitmap);
         }
     }
 
-    private void onCaptureImageResult(Intent data){
-        bitmap = (Bitmap) data.getExtras().get("data");
-        //setProgressBar();
-        editPhoto.setMaxWidth(100);
-        editPhoto.setImageBitmap(bitmap);
-    }
-
+    //Add Calendar to edit the date
     public void newDate() {
         editDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //Get current date
                 Calendar cal = Calendar.getInstance();
                 int year = cal.get(Calendar.YEAR);
                 int month = cal.get(Calendar.MONTH);
                 int day = cal.get(Calendar.DAY_OF_MONTH);
+                //Create the dateDialog
                 DatePickerDialog dialog = new DatePickerDialog(getActivity(), android.R.style.Theme, dateSetListener, year, month, day);
                 dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                 dialog.show();
@@ -255,7 +260,6 @@ public class NewgameFragment extends Fragment{
             @Override
             public void onDateSet(DatePicker view, int newYear, int newMonth, int newDayOfMonth) {
                 newMonth ++;
-                Log.d(TAG, "onDateSet: yyyy:mm:dd:" + newYear + "/" + newMonth + "/" + newDayOfMonth);
                 editDate.setText(newYear + "/" + newMonth + "/" + newDayOfMonth);
             }
         };
