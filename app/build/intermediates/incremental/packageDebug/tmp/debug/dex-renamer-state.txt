@@ -1,4 +1,4 @@
-#Sat Apr 11 17:42:24 CEST 2020
+#Sat Apr 11 22:05:51 CEST 2020
 base.0=C\:\\Users\\cynth\\Documents\\GitHub\\MobileProject\\app\\build\\intermediates\\dex\\debug\\out\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex
