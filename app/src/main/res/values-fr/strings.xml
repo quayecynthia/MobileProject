@@ -8,6 +8,7 @@
     <string name="action_settings">Réglages</string>
 
     <string name="menu_home">Accueil</string>
+    <string name="menu_moto">Bienvenue dans notre sporting app</string>
     <string name="menu_newgame">Nouveau match</string>
     <string name="menu_previousgame">Anciens matchs</string>
     <string name="menu_locations">Localisations</string>

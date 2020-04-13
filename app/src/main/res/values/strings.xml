@@ -8,6 +8,7 @@
     <string name="action_settings">Settings</string>
 
     <string name="menu_home">Home</string>
+    <string name="menu_moto">Welcome to our sporting app</string>
     <string name="menu_newgame">New Game</string>
     <string name="menu_previousgame">Previous Games</string>
     <string name="menu_locations">Locations</string>

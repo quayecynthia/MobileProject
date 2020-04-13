@@ -1337,6 +1337,7 @@ id left
 id light
 id line1
 id line3
+id linearLayout1
 id linear_home
 id listMode
 id list_item
@@ -1348,6 +1349,7 @@ id message
 id middle
 id mini
 id mobile_navigation
+id moto
 id mtrl_child_content_container
 id mtrl_internal_children_alpha_tag
 id multiply
@@ -1662,6 +1664,7 @@ string label_secondTeam
 string menu_allgames
 string menu_home
 string menu_locations
+string menu_moto
 string menu_newgame
 string menu_previousgame
 string menu_statistics

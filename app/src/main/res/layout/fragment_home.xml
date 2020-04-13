@@ -38,21 +38,56 @@
                 android:orientation="horizontal" />
         </LinearLayout>
 
-        <Button
-            android:id="@+id/button_newGame"
+        <LinearLayout
+            android:id="@+id/linearLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center">
+
+        <ImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:maxWidth="150dp"
+            android:maxHeight="150dp"
+            android:scaleType="fitCenter"
+            android:layout_marginLeft="3dp"
+            android:layout_marginBottom="20dp"
+            android:gravity="center"
+            android:src="@drawable/soccer"/>
+
+        <TextView
+            android:id="@+id/moto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/menu_moto"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"/>
+
+        <Button
+            android:id="@+id/button_newGame"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorAccent"
             android:orientation="vertical"
-            android:text="@string/home_new" />
+            android:text="@string/home_new"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:layout_marginTop="30dp"
+            android:textColor="@android:color/white" />
 
         <Button
             android:id="@+id/button_previousGame"
-            android:layout_width="match_parent"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:padding="6dp"
             android:orientation="vertical"
-            android:text="@string/home_previous" />
+            android:text="@string/home_previous"
+            android:backgroundTint="@color/colorAccent"
+            android:textColor="@android:color/white"/>
+        </LinearLayout>
 
     </LinearLayout>
 
