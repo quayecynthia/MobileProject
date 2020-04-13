@@ -1,4 +1,4 @@
-package ck.edu.com.soccerproject;
+package ck.edu.com.soccerproject.model;
 
 import android.database.Cursor;
 import android.os.AsyncTask;
@@ -9,12 +9,12 @@ import java.sql.SQLException;
 
 
 
-public class ExternalDatabase extends AsyncTask<Cursor, Void, Cursor> {
+public class ExternalDatabase extends AsyncTask<Void, Void, Cursor> {
 
     Connection con;
 
     @Override
-    protected Cursor doInBackground(Cursor... strings) {
+    protected Cursor doInBackground(Void... nothing) {
         try{
 
             Class.forName("com.mysql.jdbc.Driver").newInstance();

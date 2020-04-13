@@ -1,4 +1,4 @@
-#Mon Apr 13 17:09:11 CEST 2020
+#Mon Apr 13 18:55:55 CEST 2020
 base.0=/Users/oceanesalmeron/AndroidStudioProjects/SoccerProject/app/build/intermediates/dex/debug/out/classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

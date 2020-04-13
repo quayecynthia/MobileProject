@@ -1,4 +1,4 @@
-package ck.edu.com.soccerproject;
+package ck.edu.com.soccerproject.model;
 
 import androidx.fragment.app.FragmentActivity;
 
@@ -10,6 +10,8 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+
+import ck.edu.com.soccerproject.R;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 

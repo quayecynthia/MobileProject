@@ -1,4 +1,4 @@
-package ck.edu.com.soccerproject;
+package ck.edu.com.soccerproject.model;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -67,7 +67,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Cursor result = db.rawQuery("select * from "+ TABLE_NAME, null);
 
         if (result.getCount()>5){
-            new ExternalDatabase().execute(result);
+            //new ExternalDatabase().execute(result);
         }
     }
 

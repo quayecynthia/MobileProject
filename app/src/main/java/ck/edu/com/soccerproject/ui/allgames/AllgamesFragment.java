@@ -6,22 +6,17 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
-import java.util.List;
 
-import ck.edu.com.soccerproject.DatabaseHelper;
-import ck.edu.com.soccerproject.Game;
-import ck.edu.com.soccerproject.ListGames;
+import ck.edu.com.soccerproject.model.DatabaseHelper;
+import ck.edu.com.soccerproject.model.Game;
+import ck.edu.com.soccerproject.model.ListGames;
 import ck.edu.com.soccerproject.R;
 
 public class AllgamesFragment extends Fragment {

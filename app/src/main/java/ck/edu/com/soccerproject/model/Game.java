@@ -1,4 +1,4 @@
-package ck.edu.com.soccerproject;
+package ck.edu.com.soccerproject.model;
 
 //model for one game
 public class Game {

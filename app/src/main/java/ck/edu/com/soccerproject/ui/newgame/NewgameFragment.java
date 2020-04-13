@@ -2,9 +2,7 @@ package ck.edu.com.soccerproject.ui.newgame;
 import android.Manifest;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
-import android.app.Dialog;
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -27,10 +25,6 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
-import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -44,11 +38,10 @@ import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 
-import java.util.Arrays;
 import java.util.Calendar;
 
-import ck.edu.com.soccerproject.DatabaseHelper;
-import ck.edu.com.soccerproject.PlaceAutoSuggestAdapter;
+import ck.edu.com.soccerproject.model.DatabaseHelper;
+import ck.edu.com.soccerproject.model.PlaceAutoSuggestAdapter;
 import ck.edu.com.soccerproject.R;
 
 import static androidx.constraintlayout.widget.Constraints.TAG;
