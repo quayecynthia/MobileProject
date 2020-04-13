@@ -10,18 +10,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="46507809-542c-4e37-966a-33c1760d48f5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/ck/edu/com/soccerproject/model/ExternalDatabase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/ck/edu/com/soccerproject/DatabaseHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ck/edu/com/soccerproject/DatabaseHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/ck/edu/com/soccerproject/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ck/edu/com/soccerproject/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/ck/edu/com/soccerproject/ListGames.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ck/edu/com/soccerproject/ListGames.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/ck/edu/com/soccerproject/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ck/edu/com/soccerproject/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/ck/edu/com/soccerproject/PlaceApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ck/edu/com/soccerproject/PlaceApi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/ck/edu/com/soccerproject/PlaceAutoSuggestAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ck/edu/com/soccerproject/PlaceAutoSuggestAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ck/edu/com/soccerproject/DatabaseHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ck/edu/com/soccerproject/model/DatabaseHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ck/edu/com/soccerproject/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ck/edu/com/soccerproject/model/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ck/edu/com/soccerproject/ListGames.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ck/edu/com/soccerproject/model/ListGames.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ck/edu/com/soccerproject/PlaceApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ck/edu/com/soccerproject/model/PlaceApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ck/edu/com/soccerproject/PlaceAutoSuggestAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ck/edu/com/soccerproject/model/PlaceAutoSuggestAdapter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/ck/edu/com/soccerproject/ui/allgames/AllgamesFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ck/edu/com/soccerproject/ui/allgames/AllgamesFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/ck/edu/com/soccerproject/ui/home/HomeFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ck/edu/com/soccerproject/ui/home/HomeFragment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/ck/edu/com/soccerproject/ui/locations/LocationsFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ck/edu/com/soccerproject/ui/locations/LocationsFragment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/ck/edu/com/soccerproject/ui/newgame/NewgameFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ck/edu/com/soccerproject/ui/newgame/NewgameFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/ck/edu/com/soccerproject/ui/previousgame/PreviousgameFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ck/edu/com/soccerproject/ui/previousgame/PreviousgameFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_newgame.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_newgame.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values-fr/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values-fr/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,7 +31,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="Galaxy_Nexus_API_22" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_2_API_29" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -38,7 +40,12 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
-        <projects_view />
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
       </state>
     </system>
   </component>
@@ -64,7 +71,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SelectDeploymentTargetsDialog.selectedDevices" value="Galaxy_Nexus_API_22" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
-    <property name="last_opened_file_path" value="$USER_HOME$/AndroidStudioProjects/SoccerProject" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
   </component>
   <component name="RecentsManager">

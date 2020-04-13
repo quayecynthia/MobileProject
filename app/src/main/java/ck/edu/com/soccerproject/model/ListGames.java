@@ -1,4 +1,4 @@
-package ck.edu.com.soccerproject;
+package ck.edu.com.soccerproject.model;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -12,6 +12,8 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+
+import ck.edu.com.soccerproject.R;
 
 //List of all games in a recyclerView
 public class ListGames extends RecyclerView.Adapter<ListGames.MyViewHolder> {

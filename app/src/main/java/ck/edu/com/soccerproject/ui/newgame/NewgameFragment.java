@@ -15,7 +15,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.provider.MediaStore;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,14 +37,11 @@ import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 
-import java.util.Arrays;
 import java.util.Calendar;
 
-import ck.edu.com.soccerproject.DatabaseHelper;
-import ck.edu.com.soccerproject.PlaceAutoSuggestAdapter;
+import ck.edu.com.soccerproject.model.DatabaseHelper;
+import ck.edu.com.soccerproject.model.PlaceAutoSuggestAdapter;
 import ck.edu.com.soccerproject.R;
-
-import static androidx.constraintlayout.widget.Constraints.TAG;
 
 //Add a new game in the database
 public class NewgameFragment extends Fragment{
@@ -92,27 +88,42 @@ public class NewgameFragment extends Fragment{
         button_addData.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Retrieve all information and insert them in the database
-                boolean isInserted = myDatabase.insertData(editFirstTeam.getText().toString(),
-                        editSecondTeam.getText().toString(),
-                        editScore.getText().toString(),
-                        editDate.getText().toString(),
-                        editLocation.getText().toString(),
-                        imageViewToByte(editPhoto));
-                if( isInserted == true){
-                    editFirstTeam.setText("");
-                    editSecondTeam.setText("");
-                    editScore.setText("");
-                    editDate.setText("");
-                    editLocation.setText("");
-                    editPhoto.setImageResource(R.mipmap.ic_launcher);
-                    Toast.makeText(getActivity(), "Data inserted", Toast.LENGTH_LONG).show();
+                boolean isEmpty=false;
+
+                if (editFirstTeam.getText().toString().matches("") || editSecondTeam.getText().toString().matches("") ||
+                        editScore.getText().toString().matches("") || editDate.getText().toString().matches("") ||
+                        editLocation.getText().toString().matches("") || editPhoto.getDrawable()==null) {
+                    isEmpty=true;
                 }
-                else{
-                    Toast.makeText(getActivity(), "Data not inserted", Toast.LENGTH_LONG).show();
+
+                if(!isEmpty){
+                    boolean isInserted = myDatabase.insertData(editFirstTeam.getText().toString(),
+                            editSecondTeam.getText().toString(),
+                            editScore.getText().toString(),
+                            editDate.getText().toString(),
+                            editLocation.getText().toString(),
+                            imageViewToByte(editPhoto));
+                    myDatabase.exportData();
+                    if( isInserted == true){
+                        editFirstTeam.setText("");
+                        editSecondTeam.setText("");
+                        editScore.setText("");
+                        editDate.setText("");
+                        editLocation.setText("");
+                        editPhoto.setImageResource(R.mipmap.ic_launcher);
+                        Toast.makeText(getActivity(), "Data inserted", Toast.LENGTH_LONG).show();
+                    }
+                    else{
+                        Toast.makeText(getActivity(), "Data not inserted", Toast.LENGTH_LONG).show();
+                    }
+                }else{
+                    Toast.makeText(getActivity(), "Fill the fields", Toast.LENGTH_LONG).show();
                 }
+
+
             }
         });
+
 
         button_addPhotos.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -1,4 +1,4 @@
-package ck.edu.com.soccerproject;
+package ck.edu.com.soccerproject.model;
 
 import android.content.Context;
 import android.widget.ArrayAdapter;

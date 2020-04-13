@@ -26,9 +26,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import ck.edu.com.soccerproject.DatabaseHelper;
-import ck.edu.com.soccerproject.Game;
-import ck.edu.com.soccerproject.ListGames;
+import ck.edu.com.soccerproject.model.DatabaseHelper;
+import ck.edu.com.soccerproject.model.Game;
+import ck.edu.com.soccerproject.model.ListGames;
 import ck.edu.com.soccerproject.R;
 
 //Fragment for matches locations
