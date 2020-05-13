@@ -7,9 +7,6 @@
 
 - [Description](#description)
 - [Installation](#installation)
-- [Supported Platforms](#supported-platforms)
-- [Usage Instruction](#usage)
-- [Tests](#tests)
 - [Contributors](#contributing)
 
 </details>
